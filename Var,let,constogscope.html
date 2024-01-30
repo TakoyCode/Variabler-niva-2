@@ -1,0 +1,38 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Var, let, const og scope</title>
+</head>
+
+<body>
+    <script>
+        const test1 = "hei"; // konstant verdi - kan ikke endres
+        let test2 = "heisan"; // kan endres - let er bare tilgjengelig i sitt område/scope
+        var test3 = "håihåi!"; // kan endres - er tilgjengelig i større scope 
+
+        function testScopes() {
+            var hello = "Var Hello";
+            let hello2 = "Let Hello";
+
+            console.log(hello, hello2); // Var Hello & Let Hello
+
+            {
+                var yo = "Var yo i obj";
+                let yo2 = "Let yo i obj";
+                console.log(yo, yo2); // var yo & let yo
+            }
+
+
+            console.log(yo); // var yo
+            console.log(yo2); /* error! let får man bare tak i samme scope, 
+                              her er den pakket inn i ett objekt og "glemt bort" */
+
+        }
+        testScopes();
+    </script>
+</body>
+
+</html>

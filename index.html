@@ -1,0 +1,45 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+
+<body>
+
+    <div id="output">0</div>
+    <button onclick="setnum(12)">set number to 12</button>
+    <button onclick="setnum(31)">set number to 31</button> <br />
+    <button onclick="increasenum()">increase number by 1</button>
+    <button onclick="secondnum()">Add 2</button>
+
+
+
+    <script>
+        //Setter en Div til enten 12 eller 31 via buttons
+        var outputDiv = document.getElementById('output');
+        var numtoshow = 0;
+
+        function setnum(number) {
+            numtoshow = number;
+            outputDiv.innerHTML = numtoshow;
+        }
+
+        function increasenum() {
+            numtoshow++; //numtoshow = numtoshow + 1
+            outputDiv.innerHTML = numtoshow;
+        }
+
+        function secondnum() {
+            var number2 = 2;
+            outputDiv.innerHTML = numtoshow + number2;
+            console.log(numtoshow, "<- detter er verdien i numtoshow -- dette er verdien i number2 ->", number2);
+        }
+
+
+    </script>
+</body>
+
+</html>

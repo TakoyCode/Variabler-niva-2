@@ -1,0 +1,62 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Bytting av bakgrunnsfarge på nettleser eller valgt div v/klikk.</title>
+    <link rel="stylesheet" href="Styles.css">
+</head>
+
+<body id="body">
+    <div id="">
+        <Div id="RedDiv" onclick="SetDivColor('RedDiv','red')">Rød</Div>
+        <Div id="BlueDiv" onclick="SetDivColor('BlueDiv','blue')">Blå</Div>
+        <Div id="GreenDiv" onclick="SetDivColor('GreenDiv','green')">Grønn</Div>
+        <Div id="ResetDiv" onclick="SetDivColor('ResetDiv','white')">Hvit</Div>
+    </div>
+
+    <br />
+    <button onclick="Changebackroundcolor()">Endre bakgrunnsfarge til valgt farge</button>
+    <br />
+    <br />
+    <div class="border" id="changediv1" onclick="changeDivColor('changediv1')"></div>
+    <br />
+    <div class="border" id="changediv2" onclick="changeDivColor('changediv2')"></div>
+    <br />
+    <div class="border" id="changediv3" onclick="changeDivColor('changediv3')"></div>
+
+    <script>
+
+        let SelectedColor = "blue";
+        SetDivColor('BlueDiv', 'blue');
+
+        // For å endre bakgrunnsfarge til en av divene du trykker på
+        function changeDivColor(id) {
+            document.getElementById(id).style.backgroundColor = SelectedColor;
+        }
+
+        // For å endre bakgrunnsfarge til hele siden
+        function Changebackroundcolor() {
+            document.getElementById('body').style.backgroundColor = SelectedColor;
+        }
+
+
+        function SetDivColor(id, color) {
+            document.getElementById("RedDiv").classList.remove('border');
+            document.getElementById("BlueDiv").classList.remove('border');
+            document.getElementById("GreenDiv").classList.remove('border');
+            document.getElementById("ResetDiv").classList.remove('border');
+            document.getElementById(id).classList.add('border');
+
+            SelectedColor = color;
+            console.log(SelectedColor /*What color is picked*/);
+        }
+
+
+
+
+    </script>
+</body>
+
+</html>
