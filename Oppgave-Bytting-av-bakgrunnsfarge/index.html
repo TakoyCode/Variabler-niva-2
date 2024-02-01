@@ -43,17 +43,19 @@
 
 
         function SetDivColor(id, color) {
-            document.getElementById("RedDiv").classList.remove('border');
-            document.getElementById("BlueDiv").classList.remove('border');
-            document.getElementById("GreenDiv").classList.remove('border');
-            document.getElementById("ResetDiv").classList.remove('border');
+            Removeborder();
             document.getElementById(id).classList.add('border');
 
             SelectedColor = color;
             console.log(SelectedColor /*What color is picked*/);
         }
 
-
+        function Removeborder() {
+            document.getElementById("RedDiv").classList.remove('border');
+            document.getElementById("BlueDiv").classList.remove('border');
+            document.getElementById("GreenDiv").classList.remove('border');
+            document.getElementById("ResetDiv").classList.remove('border');
+        }
 
 
     </script>
