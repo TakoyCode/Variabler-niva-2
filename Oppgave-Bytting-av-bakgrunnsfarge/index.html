@@ -9,6 +9,8 @@
 </head>
 
 <body id="body">
+
+    <!-- Divene du kan trykke på, for å "velge" en farge -->
     <div id="">
         <Div id="RedDiv" onclick="SetDivColor('RedDiv','red')">Rød</Div>
         <Div id="BlueDiv" onclick="SetDivColor('BlueDiv','blue')">Blå</Div>
@@ -17,9 +19,13 @@
     </div>
 
     <br />
+
+    <!-- Knapp som setter bakgrunnsfarge fargen til body, til fargen som er hold i "SelectedColor" -->
     <button onclick="Changebackroundcolor()">Endre bakgrunnsfarge til valgt farge</button>
     <br />
     <br />
+
+    <!-- Diver du kan trykke på som blir endret til fargen som er holdt "SelectedColor" -->
     <div class="border" id="changediv1" onclick="changeDivColor('changediv1')"></div>
     <br />
     <div class="border" id="changediv2" onclick="changeDivColor('changediv2')"></div>
@@ -27,21 +33,24 @@
     <div class="border" id="changediv3" onclick="changeDivColor('changediv3')"></div>
 
     <script>
-
+        // Holder den valgte fargen
         let SelectedColor = "blue";
+
+        // Setter den valgte diven og fargen til blå på startopp
         SetDivColor('BlueDiv', 'blue');
 
-        // For å endre bakgrunnsfarge til en av divene du trykker på
+        /* Henter id-en til diven du trykker på 
+        og så setter backgrunnsfargen dems til fargen som er holdt i "SelectedColor" */
         function changeDivColor(id) {
             document.getElementById(id).style.backgroundColor = SelectedColor;
         }
 
-        // For å endre bakgrunnsfarge til hele siden
+        /* Setter backgrunnsfargen til <body> til fargen som er holdt i "SelectedColor" */
         function Changebackroundcolor() {
             document.getElementById('body').style.backgroundColor = SelectedColor;
         }
 
-
+        //Gir en border og endrer tekstfarge til farge divene, så du kan se hvem som er valgt
         function SetDivColor(id, color) {
             Removeborder();
             document.getElementById(id).classList.add('border');
@@ -50,6 +59,7 @@
             console.log(SelectedColor /*What color is picked*/);
         }
 
+        // Sletter border fra alle divene, så bare en har border om gangen
         function Removeborder() {
             document.getElementById("RedDiv").classList.remove('border');
             document.getElementById("BlueDiv").classList.remove('border');
